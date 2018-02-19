@@ -1,0 +1,167 @@
+\documentclass{beamer}
+\usepackage[spanish]{babel}
+
+\begin{document}
+
+
+\begin{frame}
+    \frametitle{plot} 
+
+plot {graphics}	\hspace{5cm} R Documentation
+
+\begin{center}
+Generic X-Y Plotting
+\end{center}
+
+{\footnotesize
+
+\textbf{Description}
+
+\vspace{2mm}
+
+Generic function for plotting of R objects. For more details about the graphical parameter arguments, see {\color{blue} par}.
+
+For simple scatter plots, {\color{blue} plot.default} will be used. However, there are plot methods for many R objects, including {\color{blue} function}S, {\color{blue}data.frame}S, {\color{blue} density} objects, etc. Use methods(plot) and the documentation for these.
+
+\vspace{2mm} 
+
+\textbf{Usage}
+
+plot(x, y, ...)
+
+}
+
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{plot} 
+
+{\footnotesize
+
+\textbf{Arguments}
+
+\textbf{x} - 
+the coordinates of points in the plot. Alternatively, a single plotting structure, function or any R object with a plot method can be provided.
+
+\textbf{y} - 
+the y coordinates of points in the plot, optional if x is an appropriate structure.
+
+\textbf{...}-
+Arguments to be passed to methods, such as graphical parameters (see par). Many methods will accept the following arguments:
+
+}
+
+
+
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{plot} 
+ 
+ {\footnotesize
+   
+\textbf{type} -
+what type of plot should be drawn. Possible types are
+
+\begin{itemize}
+\item  "p" for points,
+\item "l" for lines,
+\item "b" for both,
+\item "c" for the lines part alone of "b",
+\item "o" for both ‘overplotted’,
+\item "h" for ‘histogram’ like (or ‘high-density’) vertical lines,
+\item "s" for stair steps,
+\item "S" for other steps, see ‘Details’ below,
+\item "n" for no plotting.
+\end{itemize}
+ }
+ 
+ 
+ \end{frame} 
+
+
+\begin{frame}
+    \frametitle{plot} 
+ 
+ {\footnotesize
+ 
+\textbf{main} -
+an overall title for the plot: see title.
+
+\textbf{sub} -
+a sub title for the plot: see title.
+
+\textbf{xlab} -
+a title for the x axis: see title.
+
+\textbf{ylab} -
+a title for the y axis: see title.
+
+ }
+ 
+ 
+ \end{frame} 
+ 
+ \begin{frame}
+    \frametitle{plot} 
+ 
+ {\footnotesize
+
+\textbf{Details}
+
+The two step types differ in their x-y preference: Going from (x1,y1) to (x2,y2) with x1 $<$ x2, type = "s" moves first horizontal, then vertical, whereas type = "S" moves the other way around.
+
+\vspace{2mm}
+
+\textbf{See Also}
+
+{\color{blue} plot.default, plot.formula} and other methods; {\color{blue}points, lines, par}. For thousands of points, consider using {\color{blue}smoothScatter()} instead of plot().
+
+For X-Y-Z plotting see {\color{blue}contour, persp} and {image}.
+
+ }
+ 
+ \end{frame} 
+
+
+ \begin{frame}
+    \frametitle{plot} 
+ 
+ {\footnotesize
+
+\textbf{Examples}
+
+\vspace{2mm}
+
+require(stats) \# for lowess, rpois, rnorm
+
+plot(cars)
+
+lines(lowess(cars))
+
+\vspace{2mm}
+
+plot(sin, -pi, 2*pi) \# see ?plot.function
+
+\vspace{2mm}
+
+\#\# Discrete Distribution Plot:
+
+plot(table(rpois(100, 5)), type = "h", col = "red", lwd = 10,
+
+     main = "rpois(100, lambda = 5)")
+
+\vspace{2mm}
+
+\#\# Simple quantiles/ECDF, see ecdf() {library(stats)} for a better one:
+
+plot(x <- sort(rnorm(47)), type = "s", main = "plot(x, type = \"s\")")
+
+points(x, cex = .5, col = "dark red")
+}
+ 
+ \end{frame} 
+
+\end{document}

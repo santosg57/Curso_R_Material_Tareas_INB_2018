@@ -1,0 +1,93 @@
+\documentclass{article}
+% https://es.wikipedia.org/wiki/Regresi%C3%B3n_lineal
+
+\usepackage{amsfonts}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,activeacute]{babel}
+\usepackage{mathtools}
+
+\title{Regresi\'on lineal}
+\author{Escribe aqu\'i tu nombre}
+
+\begin{document}
+% cuerpo del documento
+
+\maketitle
+
+En estad\'istica la regresi\'on lineal o ajuste lineal es un modelo matem\'atico usado para aproximar la relaci\'on de dependencia entre una variable dependiente Y, las variables independientes $X_i$ y un t\'ermino aleatorio $\varepsilon$. Este modelo puede ser expresado como:
+
+\[
+{\displaystyle Y_{t}=\beta _{0}+\beta _{1}X_{1}+\beta _{2}X_{2}+\cdots +\beta _{p}X_{p}+\varepsilon }
+\]
+
+donde:
+
+${\displaystyle Y_{t}} {\displaystyle Y_{t}}$: variable dependiente, explicada o regresando.
+
+${\displaystyle X_{1},X_{2},\cdots ,X_{p}} {\displaystyle X_{1},X_{2},\cdots ,X_{p}}$: variables explicativas, independientes o regresores.
+
+${\displaystyle \beta _{0},\beta _{1},\beta _{2},\cdots ,\beta _{p}} {\displaystyle \beta _{0},\beta _{1},\beta _{2},\cdots ,\beta _{p}}$: par\'ametros, miden la influencia que las variables explicativas tienen sobre el regrediendo.
+donde ${\displaystyle \beta _{0}} \beta_0$ es la intersecci\'on o t\'ermino "constante", las ${\displaystyle \beta _{i}\ (i>0)} {\displaystyle \beta _{i}\ (i>0)}$ son los par\'ametros respectivos a cada variable independiente, y ${\displaystyle p}$ p es el número de par\'ametros independientes a tener en cuenta en la regresi\'on. La regresi\'on lineal puede ser contrastada con la regresi\'on no lineal.
+
+\vspace{3mm}
+
+\begin{flushleft}
+{\large{\textbf{Historia}}}
+\end{flushleft}
+
+\vspace{1pt}
+
+\hrule
+
+La primera forma de regresi\'on lineal documentada fue el m\'etodo de los mínimos cuadrados que fue publicada por Legendre en 1805, Gauss public\'o un trabajo en donde desarrollaba de manera m\'as profunda el m\'etodo de los mínimos cuadrados,1​ y en d\'onde se incluía una versi\'on del teorema de Gauss-M\'arkov.
+
+El t\'ermino regresi\'on se utiliz\'o por primera vez en el estudio de variables antropom\'etricas: al comparar la estatura de padres e hijos, donde result\'o que los hijos cuyos padres tenían una estatura muy superior al valor medio, tendían a igualarse a \'este, mientras que aquellos cuyos padres eran muy bajos tendían a reducir su diferencia respecto a la estatura media; es decir, "regresaban" al promedio.2​ La constataci\'on empírica de esta propiedad se vio reforzada m\'as tarde con la justificaci\'on te\'orica de ese fen\'omeno.
+
+El t\'ermino lineal se emplea para distinguirlo del resto de t\'ecnicas de regresi\'on, que emplean modelos basados en cualquier clase de funci\'on matem\'atica. Los modelos lineales son una explicaci\'on simplificada de la realidad, mucho m\'as \'agiles y con un soporte te\'orico mucho m\'as extenso por parte de la matem\'atica y la estadística.
+
+Pero bien, como se ha dicho, se puede usar el t\'ermino lineal para distinguir modelos basados en cualquier clase de aplicaci\'on.
+
+\vspace{3pt}
+\begin{flushleft}
+{\large{\textbf{El modelo de regresi\'on lineal}}}
+\end{flushleft}
+\vspace{1pt}
+\hrule
+
+El modelo lineal relaciona la variable dependiente Y con K variables explícitas ${\displaystyle X_{k}} {\displaystyle X_{k}} (k = 1,...K)$, o cualquier transformaci\'on de \'estas que generen un hiperplano de par\'ametros ${\displaystyle \beta _{k}} {\displaystyle \beta _{k}}$desconocidos:
+
+(2) ${\displaystyle Y=\sum \beta _{k}X_{k}+\varepsilon } {\displaystyle Y=\sum \beta _{k}X_{k}+\varepsilon }$
+
+donde ${\displaystyle \varepsilon } {\displaystyle \varepsilon }$ es la perturbaci\'on aleatoria que recoge todos aquellos factores de la realidad no controlables u observables y que por tanto se asocian con el azar, y es la que confiere al modelo su car\'acter estoc\'astico. En el caso m\'as sencillo, con una sola variable explícita, el hiperplano es una recta:
+
+(3) ${\displaystyle Y=\beta _{1}+\beta _{2}X_{2}+\varepsilon } {\displaystyle Y=\beta _{1}+\beta _{2}X_{2}+\varepsilon }$
+
+El problema de la regresi\'on consiste en elegir unos valores determinados para los par\'ametros desconocidos ${\displaystyle \beta _{k}} {\displaystyle \beta _{k}}$, de modo que la ecuaci\'on quede completamente especificada. Para ello se necesita un conjunto de observaciones. En una observaci\'on i-\'esima (i= 1,... I) cualquiera, se registra el comportamiento simult\'aneo de la variable dependiente y las variables explícitas (las perturbaciones aleatorias se suponen no observables).
+
+(4) ${\displaystyle Y_{i}=\sum \beta _{k}X_{ki}+\varepsilon _{i}} {\displaystyle Y_{i}=\sum \beta _{k}X_{ki}+\varepsilon _{i}}$
+
+Los valores escogidos como estimadores de los par\'ametros ${\displaystyle {\hat {\beta _{k}}}} {\displaystyle {\hat {\beta _{k}}}}$, son los coeficientes de regresi\'on sin que se pueda garantizar que coincida n con par\'ametros reales del proceso generador. Por tanto, en
+
+(5) ${\displaystyle Y_{i}=\sum {\hat {\beta _{k}}}X_{ki}+{\hat {\varepsilon _{i}}}} {\displaystyle Y_{i}=\sum {\hat {\beta _{k}}}X_{ki}+{\hat {\varepsilon _{i}}}}$
+
+Los valores ${\displaystyle {\hat {\varepsilon _{i}}}} {\displaystyle {\hat {\varepsilon _{i}}}}$ son por su parte estimaciones o errores de la perturbaci\'on aleatoria.
+
+
+\textbf{Hip\'otesis del modelo de regresi\'on lineal cl\'asico}
+
+\begin{enumerate}
+\item \textbf{Esperanza matem\'atica nula:} ${\displaystyle \mathbb{E} (\varepsilon _{i})=0}$ . Para cada valor de X la perturbaci\'on tomar\'a distintos valores de forma aleatoria, pero no tomar\'a 
+sistem\'aticamente valores positivos o negativos, sino que se supone tomar\'a algunos valores mayores que cero y otros menores que cero, de tal forma que su valor esperado sea cero.
+
+
+\item \textbf{Homocedasticidad:} ${\displaystyle {\text{Var}}(\varepsilon _{t})=\mathbb {E} (\varepsilon _{t}-\mathbb {E} \varepsilon _{t})^{2}=\mathbb {E} \varepsilon _{t}^{2}=\sigma ^{2}}$ para todo t. Todos los t\'erminos de la perturbaci\'on tienen la misma varianza que es desconocida. La dispersi\'on de cada ${\displaystyle \varepsilon _{t}} $ en torno a su valor esperado es siempre la misma.
+
+\item \textbf{Incorrelaci\'on o independencia:} ${\displaystyle {\text{Cov}}(\varepsilon _{t},\varepsilon _{s})=(\varepsilon _{t}-\mathbb {E} \varepsilon _{t})(\varepsilon _{s}-\mathbb {E} \varepsilon _{s})=\mathbb {E} \varepsilon _{t}\varepsilon _{s}=0}$ para todo t,s con t distinto de s. Las covarianzas entre las distintas pertubaciones son nulas, lo que quiere decir que no est\'an correlacionadas. Esto implica que el valor de la perturbaci\'on para cualquier observaci\'on muestral no viene influenciado por los valores de las perturbaciones correspondientes a otras observaciones muestrales.
+Regresores estoc\'asticos.
+Independencia lineal. No existen relaciones lineales exactas entre los regresores.
+${\displaystyle T>k+1}$. Suponemos que no existen errores de especificaci\'on en el modelo, ni errores de medida en las variables explicativas.
+Normalidad de las perturbaciones: ${\displaystyle \varepsilon \sim N(0,\sigma ^{2})}$
+
+\end{enumerate}
+\end{document}
